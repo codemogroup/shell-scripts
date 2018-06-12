@@ -9,3 +9,9 @@ $ upfront
 
 to update and deploy back end of iroads:
 $ upback
+
+to clean and deploy front end of iroads:
+$ cleanupfront
+
+to clean and deploy back end of iroads:
+$ cleanupback
