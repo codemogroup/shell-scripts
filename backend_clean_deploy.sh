@@ -1,12 +1,16 @@
 #!/bin/bash -x
 #author : Dushan Kumarsinghe
-#purpose : update backend from github,build and deploy
+#purpose : clean backend project,clone from github,build and deploy
 
 /etc/init.d/iroadsrest stop
 
-cd ~/project/iRoadsRest
+cd ~/project
 
-git pull https://github.com/codemogroup/iRoadsRest.git
+rm -rf iRoadsRest
+
+git clone https://github.com/codemogroup/iRoadsRest.git
+
+cd iRoadsRest
 
 mvn clean install
 
@@ -14,4 +18,3 @@ sudo ln -sf ~/project/iRoadsRest/target/iroads-0.0.1-SNAPSHOT.jar /etc/init.d/ir
 
 /etc/init.d/iroadsrest start
 
-#END
